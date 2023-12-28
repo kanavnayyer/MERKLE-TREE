@@ -10,6 +10,10 @@ import java.security.MessageDigest;
  *
  * @author kanav
  */
+
+
+
+
 public class CryptographyHelper {
    public static String hash(String data) {
 
@@ -20,12 +24,14 @@ public class CryptographyHelper {
             for (int i = 0; i < hash.length; i++) {
                 String hexadecimal = Integer.toHexString(0xff & hash[i]);
                 if (hexadecimal.length() == 1) {
-                }hexadecimalString.append('0');
+                hexadecimalString.append('0');}
+                	hexadecimalString.append(hexadecimal);
             }
 return hexadecimalString.toString();
         } catch (Exception e) {
             throw new RuntimeException (e);
         }
 
+        
     }   
 }
